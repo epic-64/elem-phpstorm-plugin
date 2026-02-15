@@ -1,0 +1,50 @@
+<idea-plugin>
+    <id>com.epic64.elem-phpstorm-plugin</id>
+    <name>Elem CSS Class Support</name>
+    <vendor email="your-email@example.com" url="https://github.com/epic64/elem">Epic64</vendor>
+
+    <description><![CDATA[
+    <p>Provides CSS class completion and navigation for the <a href="https://github.com/epic64/elem">Elem PHP templating library</a>.</p>
+
+    <h3>Features</h3>
+    <ul>
+        <li><b>CSS Class Completion</b> - Get autocomplete suggestions for CSS classes when typing in <code>class:</code> parameters</li>
+        <li><b>Go to Definition</b> - Ctrl+Click on CSS class names to jump to their definitions in CSS files</li>
+        <li><b>Multi-class Support</b> - Works with space-separated class names like <code>'btn btn-primary'</code></li>
+    </ul>
+
+    <h3>Supported Functions</h3>
+    <p>Works with all Elem helper functions: <code>div()</code>, <code>span()</code>, <code>p()</code>, <code>a()</code>, <code>button()</code>, <code>input()</code>, <code>form()</code>, and more.</p>
+
+    <h3>Usage</h3>
+    <pre><code>div(class: 'container')(
+    h(1, class: 'title'),
+    p(class: 'intro-text')
+)</code></pre>
+    ]]></description>
+
+    <change-notes><![CDATA[
+    <h3>0.1.0</h3>
+    <ul>
+        <li>Initial release</li>
+        <li>CSS class completion for Elem helper functions</li>
+        <li>CSS class reference navigation (Go to Definition)</li>
+        <li>Support for all standard Elem functions</li>
+    </ul>
+    ]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.jetbrains.php</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- CSS class reference contributor for PHP strings -->
+        <psi.referenceContributor
+                language="PHP"
+                implementation="com.epic64.elem.ElemCssClassReferenceContributor"/>
+
+        <!-- Completion contributor for CSS classes -->
+        <completion.contributor
+                language="PHP"
+                implementationClass="com.epic64.elem.ElemCssClassCompletionContributor"/>
+    </extensions>
+</idea-plugin>
