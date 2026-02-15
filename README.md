@@ -1,6 +1,6 @@
 # Elem PHPStorm Plugin
 
-A PHPStorm plugin that provides CSS class completion and navigation for the [Elem](https://github.com/epic64/elem) PHP templating library.
+A PHPStorm plugin that provides CSS class completion and navigation for the [Elem](https://github.com/epic-64/elem) PHP templating library.
 
 ## Features
 
